@@ -4,8 +4,12 @@
     color: #fff;
     text-align: center;
   }
-  .footerContact h1 {
+  .footerContact span {
     font-size: 40px;
+    font-weight: bold;
+  }
+  .footerContact p {
+    font-size: 18px;
   }
   footer {
     background-color: #1d2636;
