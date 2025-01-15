@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">CompanyLogo</div>
+      <div className="navbar-logo">Vibrant Water Drilling</div>
       <button className="menu-toggle" onClick={toggleMenu}>
         <span className="menu-icon">☰</span>
       </button>
