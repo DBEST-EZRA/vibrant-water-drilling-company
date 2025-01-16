@@ -1,20 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import "./stats.css";
 
 const Stats = () => {
-  const stats = [
-    { id: 1, label: "Boreholes Drilled", value: 500 },
-    { id: 2, label: "Successful Projects", value: 1200 },
-    { id: 3, label: "Happy Clients", value: 850 },
-    { id: 4, label: "Years of Experience", value: 10 },
-  ];
+  const stats = useMemo(
+    () => [
+      { id: 1, label: "Boreholes Drilled", value: 500 },
+      { id: 2, label: "Successful Projects", value: 1200 },
+      { id: 3, label: "Happy Clients", value: 850 },
+      { id: 4, label: "Years of Experience", value: 10 },
+    ],
+    []
+  );
 
   const [counters, setCounters] = useState(stats.map(() => 0));
+  const [hasTriggered, setHasTriggered] = useState(false); // Tracks if the counter has run
+  const sectionRef = useRef(null);
 
-  const handleScroll = () => {
-    const section = document.getElementById("stats-section");
-    const sectionTop = section.getBoundingClientRect().top;
-    if (sectionTop <= window.innerHeight && counters.some((val) => val === 0)) {
+  useEffect(() => {
+    const currentRef = sectionRef.current; // Copy ref to local variable
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasTriggered) {
+          setHasTriggered(true); // Prevent retriggering
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of the section is visible
+    );
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [hasTriggered]);
+
+  useEffect(() => {
+    if (hasTriggered) {
       stats.forEach((stat, index) => {
         let start = 0;
         const end = stat.value;
@@ -35,17 +60,10 @@ const Stats = () => {
         }, stepTime);
       });
     }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [counters]);
+  }, [hasTriggered, stats]);
 
   return (
-    <section id="stats-section" className="stats-section">
+    <section ref={sectionRef} id="stats-section" className="stats-section">
       <h2 className="stats-heading">Our Achievements</h2>
       <div className="stats-container">
         {stats.map((stat, index) => (
