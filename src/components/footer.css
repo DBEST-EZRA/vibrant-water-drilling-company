@@ -1,95 +1,121 @@
 .footerContact {
-    background-color: #FF9900;
-    padding: 40px 0;
-    color: #fff;
-    text-align: center;
-  }
-  .footerContact span {
-    font-size: 40px;
-    font-weight: bold;
-  }
-  .footerContact p {
-    font-size: 18px;
-  }
-  footer {
-    background-color: #1d2636;
-    padding: 50px 0;
-    color: #fff;
-  }
+  background-color: #ff9900;
+  padding: 40px 0;
+  color: #fff;
+  text-align: center;
+  overflow: hidden; /* Prevent overflow during animations */
+}
+
+.footerContact span {
+  font-weight: bold;
+  font-size: 30px;
+  color: #01327b;
+}
+
+.footerContact p {
+  font-size: 18px;
+}
+
+.footerContact span,
+.footerContact p {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Positioned slightly below */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+}
+
+.footerContact .fade-in span,
+.footerContact .fade-in p {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+.btn5 {
+  background-color: #01327b;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.6s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(100px); /* Slide in from the right */
+}
+
+.btn5:hover {
+  background-color: #0051a1;
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn5:active {
+  background-color: #00264d;
+  transform: translateY(0);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn5:focus {
+  outline: 2px solid #0051a1; /* Focus outline for accessibility */
+  outline-offset: 4px;
+}
+
+.btn5.slide-in {
+  opacity: 1;
+  transform: translateX(0); /* Move to original position */
+}
+
+footer {
+  background-color: #1d2636;
+  padding: 50px 0;
+  color: #fff;
+}
+footer .container {
+  margin-right: 15px;
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: 6fr 2fr 2fr 1fr;
+  grid-gap: 20px;
+}
+footer img {
+  width: 150px;
+}
+footer h2 {
+  font-weight: 500;
+}
+footer p {
+  color: grey;
+  margin: 20px 0;
+}
+footer input {
+  background-color: #fff;
+  padding: 17px;
+  width: 100%;
+  border-radius: 5px;
+}
+footer h3 {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+footer ul {
+  display: block;
+}
+footer ul li {
+  display: block;
+  color: grey;
+  margin-bottom: 20px;
+}
+.legal {
+  text-align: center;
+  padding: 20px;
+  background: #1d2636;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 800px) {
   footer .container {
-    margin-right: 15px;
-    margin-left: 15px;
-    display: grid;
-    grid-template-columns: 6fr 2fr 2fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  footer img {
-    width: 150px;
-  }
-  footer h2 {
-    font-weight: 500;
-  }
-  footer p {
-    color: grey;
-    margin: 20px 0;
-  }
-  footer input {
-    background-color: #fff;
-    padding: 17px;
-    width: 100%;
-    border-radius: 5px;
-  }
-  footer h3 {
-    font-weight: 500;
-    margin-bottom: 30px;
-  }
-  footer ul {
-    display: block;
-  }
-  footer ul li {
-    display: block;
-    color: grey;
-    margin-bottom: 20px;
-  }
-  .legal {
-    text-align: center;
-    padding: 20px;
-    background: #1d2636;
-    color: rgba(255, 255, 255, 0.5);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .btn5{
-    background-color: #01327B; /* Button background color */
-    color: white; /* Text color */
-    font-size: 18px; /* Font size */
-    font-weight: bold; /* Bold text */
-    padding: 12px 24px; /* Padding for size */
-    border: none; /* Remove border */
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
-
-  .btn5:hover{
-    background-color: #0051A1; /* Slightly lighter blue on hover */
-    transform: translateY(-2px); /* Lift effect on hover */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15); 
-  }
-
-  .btn5:active{
-    background-color: #00264D; /* Darker blue on click */
-    transform: translateY(0); /* Neutralize lift on click */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .btn5:focus{
-    outline: 2px solid #0051A1; /* Focus outline for accessibility */
-    outline-offset: 4px;
-  }
-
-  @media screen and (max-width: 800px) {
-    footer .container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+}
