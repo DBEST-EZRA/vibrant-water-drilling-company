@@ -60,7 +60,7 @@ const Footer = () => {
 
               <div className="input flex">
                 <input type="text" placeholder="Email Address" />
-                <button className="btn5">Subscribe</button>
+                <button className="btn6">Subscribe</button>
               </div>
             </div>
           </div>
