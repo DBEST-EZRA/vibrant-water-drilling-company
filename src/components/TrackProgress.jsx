@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SearchSection from "./SearchSection";
 import CardSection from "./CardSection";
 
 const TrackProgress = () => {
@@ -11,9 +10,6 @@ const TrackProgress = () => {
   }, []);
   return (
     <div>
-      {/* Search section start  */}
-      <SearchSection />
-      {/* Search section end  */}
       {/* Cards section start  */}
       <CardSection />
       {/* Cards section end  */}
