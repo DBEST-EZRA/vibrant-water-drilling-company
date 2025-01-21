@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SearchSection from "./SearchSection";
-import CardSection from "./SearchSection";
+import CardSection from "./CardSection";
 
 const TrackProgress = () => {
   useEffect(() => {

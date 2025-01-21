@@ -52,26 +52,36 @@ const CardSection = () => {
     setCards(sortedCards);
   }, []);
 
-  const getStatusColor = (status) => {
+  const getStatusTextColor = (status) => {
     switch (status) {
       case "In Progress":
-        return "bg-warning text-dark";
+        return "text-warning";
       case "Completed":
-        return "bg-success text-white";
+        return "text-success";
       case "Queued":
-        return "bg-info text-white";
+        return "text-info";
       default:
-        return "bg-secondary text-white";
+        return "text-secondary";
+    }
+  };
+
+  const getPaymentTextColor = (paymentStatus) => {
+    switch (paymentStatus) {
+      case "Paid":
+        return "text-success";
+      case "Pending":
+        return "text-warning";
+      case "Unpaid":
+        return "text-danger";
+      default:
+        return "text-secondary";
     }
   };
 
   return (
     <section className="p-5" data-aos="fade-up">
       <div className="container">
-        <div
-          className="row row-cols-1 overflow-auto"
-          style={{ maxHeight: "60vh" }}
-        >
+        <div className="row row-cols-1">
           {cards.map((card, index) => (
             <div
               className="col mb-4"
@@ -84,21 +94,40 @@ const CardSection = () => {
                 (e.currentTarget.style.transform = "scale(1)")
               }
             >
-              <div className={`card shadow-sm ${getStatusColor(card.status)}`}>
+              <div
+                className="card shadow-sm bg-light"
+                style={{ borderRadius: "15px" }}
+              >
                 <div className="card-body">
-                  <h5 className="card-title">
-                    Tracking Number: {card.trackingNumber}
-                  </h5>
-                  <p className="card-text">Name: {card.name}</p>
-                  <p className="card-text">Drilling Site: {card.siteName}</p>
-                  <p className="card-text">Address: {card.address}</p>
-                  <p className="card-text">
-                    Payment Status: {card.paymentStatus}
-                  </p>
-                  <p className="card-text">Work Dates: {card.workDates}</p>
-                  <p className="card-text fw-bold">
-                    Order Status: {card.status}
-                  </p>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <h5 className="card-title">
+                        Tracking Number: {card.trackingNumber}
+                      </h5>
+                      <p className="card-text">Name: {card.name}</p>
+                      <p className="card-text">
+                        Drilling Site: {card.siteName}
+                      </p>
+                      <p className="card-text">Address: {card.address}</p>
+                    </div>
+                    <div className="col-md-6">
+                      <p
+                        className={`card-text fw-bold ${getPaymentTextColor(
+                          card.paymentStatus
+                        )}`}
+                      >
+                        Payment Status: {card.paymentStatus}
+                      </p>
+                      <p className="card-text">Work Dates: {card.workDates}</p>
+                      <p
+                        className={`card-text fw-bold ${getStatusTextColor(
+                          card.status
+                        )}`}
+                      >
+                        Order Status: {card.status}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
