@@ -8,9 +8,6 @@ const CardSection = () => {
   useEffect(() => {
     // Example data (replace with your dynamic data fetching)
     const today = new Date();
-    const formattedToday = `${today.toLocaleString("default", {
-      month: "short",
-    })} ${today.getDate()}`;
 
     const exampleCards = [
       {
@@ -42,11 +39,14 @@ const CardSection = () => {
       },
     ];
 
-    // Sort cards to show current date first
+    // Sort cards by precedence (earliest dates first)
     const sortedCards = exampleCards.sort((a, b) => {
-      if (a.status === "In Progress") return -1;
-      if (b.status === "In Progress") return 1;
-      return 0;
+      const getDate = (dates) => {
+        const [startDate] = dates.split("-");
+        return new Date(`${startDate} ${new Date().getFullYear()}`);
+      };
+
+      return getDate(a.workDates) - getDate(b.workDates);
     });
 
     setCards(sortedCards);
@@ -55,9 +55,9 @@ const CardSection = () => {
   const getStatusTextColor = (status) => {
     switch (status) {
       case "In Progress":
-        return "text-warning";
-      case "Completed":
         return "text-success";
+      case "Completed":
+        return "text-danger";
       case "Queued":
         return "text-info";
       default:
