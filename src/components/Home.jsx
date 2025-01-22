@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Testimonials from "./Testimonials";
+import HeroSection from "./HeroSection";
 
 const Home = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const Home = () => {
             path="/"
             element={
               <>
-                <h1>Vibrant Water Drilling</h1>
+                <HeroSection />
                 <Stats />
                 <Testimonials />
               </>
