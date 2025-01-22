@@ -28,38 +28,48 @@ const About = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* About Us Section */}
       <section className="container py-5" data-aos="fade-up">
-        <h2 className="text-center mb-4">Our Services</h2>
+        <h2 className="text-center mb-4">About Us</h2>
         <div className="row g-4">
-          {[
-            { title: "Water Well Drilling", icon: "🔧" },
-            { title: "Borehole Maintenance", icon: "🛠️" },
-            { title: "Water Consultancy", icon: "💧" },
-          ].map((service, index) => (
-            <div className="col-md-4" key={index}>
-              <div className="card text-center shadow-sm border-0 h-100">
-                <div className="card-body">
-                  <div
-                    className="display-4"
-                    style={{ fontSize: "3rem", marginBottom: "1rem" }}
-                  >
-                    {service.icon}
-                  </div>
-                  <h5 className="card-title fw-bold">{service.title}</h5>
-                  <p className="card-text">
-                    High-quality {service.title.toLowerCase()} services tailored
-                    to meet your needs.
-                  </p>
-                </div>
-                <div className="card-footer bg-transparent border-0">
-                  <button className="btn btn-outline-primary">
-                    Learn More
-                  </button>
-                </div>
+          <div className="col-12">
+            <div className="card shadow-sm border-0">
+              <div className="card-body p-4">
+                <p className="card-text fs-5 text-muted">
+                  Welcome to <strong>Vibrant Water Drilling Company</strong>,
+                  your trusted partner in delivering dependable water solutions
+                  across Kenya. With over a decade of experience, we have
+                  established ourselves as leaders in water drilling and
+                  consultancy services. Our team combines state-of-the-art
+                  technology with an unwavering commitment to quality, ensuring
+                  sustainable and efficient water solutions for our clients.
+                </p>
+                <p className="card-text fs-5 text-muted">
+                  Established 10 years ago, we pride ourselves on being pioneers
+                  in the industry, working diligently to provide communities and
+                  businesses with access to clean and reliable water sources.
+                  From drilling water wells to maintaining boreholes, our
+                  services are tailored to meet diverse needs while upholding
+                  the highest standards of professionalism and environmental
+                  care.
+                </p>
+                <p className="card-text fs-5 text-muted">
+                  Our operations are built on trust, innovation, and a passion
+                  for making a difference. Whether you're looking for expert
+                  advice, precision drilling, or maintenance services, we are
+                  here to guide you every step of the way. At Vibrant Water
+                  Drilling Company, we believe in fostering long-lasting
+                  partnerships with our clients by delivering exceptional
+                  results that exceed expectations.
+                </p>
+                <p className="card-text fs-5 text-muted">
+                  Join us as we continue to shape the future of water
+                  accessibility in Kenya, one project at a time. Together, we
+                  can create a sustainable and vibrant future for all.
+                </p>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
