@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Testimonials = () => {
   useEffect(() => {
@@ -54,7 +55,9 @@ const Testimonials = () => {
   return (
     <section className="py-5 bg-light" data-aos="fade-up">
       <div className="container">
-        <h2 className="text-center mb-4">What Our Clients Say</h2>
+        <h2 className="text-center mb-4" style={{ color: "#01327b" }}>
+          What Our Clients Say
+        </h2>
         <div
           id="testimonialCarousel"
           className="carousel slide"
@@ -90,10 +93,7 @@ const Testimonials = () => {
             data-bs-target="#testimonialCarousel"
             data-bs-slide="prev"
           >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
+            <i className="fas fa-chevron-left fs-3 text-dark"></i>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -102,10 +102,7 @@ const Testimonials = () => {
             data-bs-target="#testimonialCarousel"
             data-bs-slide="next"
           >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
+            <i className="fas fa-chevron-right fs-3 text-dark"></i>
             <span className="visually-hidden">Next</span>
           </button>
         </div>
