@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const Home = () => {
               <>
                 <h1>Vibrant Water Drilling</h1>
                 <Stats />
+                <Testimonials />
               </>
             }
           />
