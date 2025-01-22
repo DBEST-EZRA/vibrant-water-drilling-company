@@ -14,7 +14,7 @@ const About = () => {
       <section
         className="d-flex align-items-center justify-content-center text-center text-white bg-dark"
         style={{
-          height: "60vh",
+          height: "50vh",
           backgroundImage: "url('https://picsum.photos/1920/1080?grayscale')",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -23,7 +23,8 @@ const About = () => {
         <div>
           <h1 className="display-4 fw-bold">Vibrant Water Drilling Company</h1>
           <p className="lead mt-3">
-            Delivering reliable water solutions with precision and efficiency.
+            Over a decade of excellence in water drilling and consultancy
+            services.
           </p>
         </div>
       </section>
@@ -31,44 +32,51 @@ const About = () => {
       {/* About Us Section */}
       <section className="container py-5" data-aos="fade-up">
         <h2 className="text-center mb-4">About Us</h2>
-        <div className="row g-4">
+        <div className="row">
           <div className="col-12">
-            <div className="card shadow-sm border-0">
-              <div className="card-body p-4">
-                <p className="card-text fs-5 text-muted">
-                  Welcome to <strong>Vibrant Water Drilling Company</strong>,
-                  your trusted partner in delivering dependable water solutions
-                  across Kenya. With over a decade of experience, we have
-                  established ourselves as leaders in water drilling and
-                  consultancy services. Our team combines state-of-the-art
-                  technology with an unwavering commitment to quality, ensuring
-                  sustainable and efficient water solutions for our clients.
-                </p>
-                <p className="card-text fs-5 text-muted">
-                  Established 10 years ago, we pride ourselves on being pioneers
-                  in the industry, working diligently to provide communities and
-                  businesses with access to clean and reliable water sources.
-                  From drilling water wells to maintaining boreholes, our
-                  services are tailored to meet diverse needs while upholding
-                  the highest standards of professionalism and environmental
-                  care.
-                </p>
-                <p className="card-text fs-5 text-muted">
-                  Our operations are built on trust, innovation, and a passion
-                  for making a difference. Whether you're looking for expert
-                  advice, precision drilling, or maintenance services, we are
-                  here to guide you every step of the way. At Vibrant Water
-                  Drilling Company, we believe in fostering long-lasting
-                  partnerships with our clients by delivering exceptional
-                  results that exceed expectations.
-                </p>
-                <p className="card-text fs-5 text-muted">
-                  Join us as we continue to shape the future of water
-                  accessibility in Kenya, one project at a time. Together, we
-                  can create a sustainable and vibrant future for all.
-                </p>
-              </div>
-            </div>
+            <h3 className="fw-bold mb-3">Our Vision</h3>
+            <p className="text-muted fs-5">
+              At <strong>Vibrant Water Drilling Company</strong>, our vision is
+              to empower communities and businesses across Kenya with
+              sustainable water solutions. We aim to be a driving force in
+              ensuring every household, farm, and industry has access to clean
+              and reliable water resources.
+            </p>
+
+            <h3 className="fw-bold mb-3">Who We Are</h3>
+            <p className="text-muted fs-5">
+              Based in Nairobi, Kenya,{" "}
+              <strong>Vibrant Water Drilling Company</strong> is a leader in
+              water drilling, borehole maintenance, and consultancy services.
+              With 10 years of experience, we have earned a reputation for
+              delivering reliable and innovative solutions tailored to meet the
+              diverse needs of our clients.
+            </p>
+
+            <h3 className="fw-bold mb-3">Our Expertise</h3>
+            <p className="text-muted fs-5">
+              We combine advanced drilling technologies, a dedicated team of
+              professionals, and eco-friendly practices to deliver precision and
+              efficiency in every project. From drilling water wells to
+              providing expert consultations, we are committed to excellence at
+              every step.
+            </p>
+
+            <h3 className="fw-bold mb-3">Our Commitment</h3>
+            <p className="text-muted fs-5">
+              At Vibrant, we are dedicated to building lasting relationships
+              with our clients by consistently exceeding expectations. Our team
+              is passionate about contributing to the long-term water security
+              of Kenya through projects that are both sustainable and impactful.
+            </p>
+
+            <h3 className="fw-bold mb-3">Why Choose Us</h3>
+            <p className="text-muted fs-5">
+              Choosing Vibrant Water Drilling Company means partnering with a
+              team that values trust, innovation, and quality. We deliver
+              timely, cost-effective, and customized solutions to ensure your
+              water needs are met with precision and care.
+            </p>
           </div>
         </div>
       </section>
@@ -79,15 +87,27 @@ const About = () => {
           <h2 className="text-center mb-4">Meet Our Team</h2>
           <div className="row g-4">
             {[
-              { name: "John Doe", role: "CEO" },
-              { name: "Jane Smith", role: "Operations Manager" },
-              { name: "Michael Brown", role: "Lead Technician" },
+              {
+                name: "John Doe",
+                role: "CEO",
+                img: "https://picsum.photos/300/300?random=1",
+              },
+              {
+                name: "Jane Smith",
+                role: "Operations Manager",
+                img: "https://picsum.photos/300/300?random=2",
+              },
+              {
+                name: "Michael Brown",
+                role: "Lead Technician",
+                img: "https://picsum.photos/300/300?random=3",
+              },
             ].map((member, index) => (
               <div className="col-md-4" key={index}>
                 <div className="card text-center shadow-sm border-0">
                   <img
-                    src={`https://picsum.photos/300/300?random=${index}`}
-                    alt={`${member.name}`}
+                    src={member.img}
+                    alt={member.name}
                     className="card-img-top"
                     style={{
                       height: "300px",

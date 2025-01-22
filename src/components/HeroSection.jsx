@@ -53,15 +53,18 @@ const HeroSection = () => {
           Transforming lives through sustainable water solutions for over 10
           years.
         </p>
-        <a
-          href="#"
+        <button
           className="btn btn-primary btn-lg px-5"
           style={{
             animation: "zoomIn 2s ease",
           }}
+          onClick={() => {
+            // Perform some action here, e.g., navigate programmatically or show a modal
+            console.log("Button clicked");
+          }}
         >
           Learn More
-        </a>
+        </button>
       </div>
 
       {/* Custom Animation Styles */}
