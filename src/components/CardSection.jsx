@@ -33,7 +33,7 @@ const CardSection = () => {
         siteName: "Golden Spring",
         address: "789 Lakeview, Ogdenville",
         paymentStatus: "Unpaid",
-        workDates: "Jan 27-Jan 29",
+        workDates: "Jan 26-Jan 29",
         status: "Queued",
       },
     ];
