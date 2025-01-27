@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Services = () => {
+const HomeServices = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -31,24 +31,6 @@ const Services = () => {
 
   return (
     <div>
-      {/* Introduction Section */}
-      <section
-        className="d-flex align-items-center justify-content-center text-center text-white bg-dark"
-        style={{
-          height: "60vh",
-          backgroundImage: "url('https://picsum.photos/1920/1080?grayscale')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div>
-          <h1 className="display-4 fw-bold">Vibrant Water Drilling Company</h1>
-          <p className="lead mt-3">
-            Delivering reliable water solutions with precision and efficiency.
-          </p>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section className="container py-5" data-aos="fade-up">
         <h2 className="text-center mb-4">Our Services</h2>
@@ -94,4 +76,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default HomeServices;

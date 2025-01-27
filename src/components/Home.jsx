@@ -12,7 +12,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Testimonials from "./Testimonials";
 import HeroSection from "./HeroSection";
-import GetInTouch from "./GetInTouch";
+import HomeServices from "./HomeServices";
 
 const Home = () => {
   useEffect(() => {
@@ -28,7 +28,7 @@ const Home = () => {
             element={
               <>
                 <HeroSection />
-                <GetInTouch />
+                <HomeServices />
                 <Stats />
                 <Testimonials />
               </>
