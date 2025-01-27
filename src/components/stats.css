@@ -7,9 +7,10 @@
 }
 
 .stats-heading {
+  font-weight: bold;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #ff9900;
+  color: #00c6ff;
 }
 
 .stats-container {

@@ -14,6 +14,7 @@ import Testimonials from "./Testimonials";
 import HeroSection from "./HeroSection";
 import HomeServices from "./HomeServices";
 import AskedQuestions from "./AskedQuestions";
+import Chatbot from "./Chatbot";
 
 const Home = () => {
   useEffect(() => {
@@ -33,6 +34,7 @@ const Home = () => {
                 <Stats />
                 <Testimonials />
                 <AskedQuestions />
+                <Chatbot />
               </>
             }
           />

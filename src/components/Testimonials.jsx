@@ -55,7 +55,10 @@ const Testimonials = () => {
   return (
     <section className="py-5 bg-light" data-aos="fade-up">
       <div className="container">
-        <h2 className="text-center mb-4" style={{ color: "#01327b" }}>
+        <h2
+          className="text-center mb-4"
+          style={{ color: "#01327b", fontWeight: "bold" }}
+        >
           What Our Clients Say
         </h2>
         <div

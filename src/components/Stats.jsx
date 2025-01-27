@@ -4,9 +4,9 @@ import "./stats.css";
 const Stats = () => {
   const stats = useMemo(
     () => [
-      { id: 1, label: "Boreholes Drilled", value: 500 },
-      { id: 2, label: "Successful Projects", value: 1200 },
-      { id: 3, label: "Happy Clients", value: 850 },
+      { id: 1, label: "Boreholes Drilled", value: 417 },
+      { id: 2, label: "Successful Projects", value: 863 },
+      { id: 3, label: "Happy Clients", value: 852 },
       { id: 4, label: "Years of Experience", value: 10 },
     ],
     []
@@ -43,7 +43,7 @@ const Stats = () => {
       stats.forEach((stat, index) => {
         let start = 0;
         const end = stat.value;
-        const duration = 1000; // 1 second
+        const duration = 2000; // 1 second
         const stepTime = Math.abs(Math.floor(duration / end));
 
         const timer = setInterval(() => {
