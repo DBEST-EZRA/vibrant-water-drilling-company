@@ -81,7 +81,12 @@ const AskedQuestions = () => {
 
   return (
     <div className="container py-5" data-aos="fade-up">
-      <h2 className="text-center mb-4">FAQ's</h2>
+      <h2
+        className="text-center mb-4"
+        style={{ color: "#01327b", fontWeight: "bold" }}
+      >
+        FAQ's
+      </h2>
       <p className="text-center mb-5">
         Find answers to some of the most frequently asked questions about our
         services. If you have more questions, feel free to contact us.
