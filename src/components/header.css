@@ -1,4 +1,14 @@
 /* Navbar.css */
+* {
+  box-sizing: border-box;
+}
+
+.containerB {
+  background-color: #01327b;
+  padding: 0.3rem 2rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,18 +16,25 @@
   padding: 1rem 2rem;
   background-color: #01327b;
   color: #fff;
-  position: relative; /* Make the navbar the positioning context for its children */
+  position: fixed; /* Fix the navbar to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the navbar is above other elements */
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  color: #fff;
+  flex: 1;
 }
 
 .navbar-links {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  margin-left: auto;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -27,6 +44,7 @@
   font-size: 1rem;
   position: relative;
   transition: color 0.3s, transform 0.3s;
+  font-weight: 500;
 }
 
 .navbar-links a:hover {
@@ -54,12 +72,13 @@
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
 }
 
-.menu-icon {
-  font-size: 2rem;
+.menu-toggle.open .menu-icon {
+  transform: rotate(90deg); /* Rotate the icon when open */
 }
 
 .navbar-links.open {
@@ -70,11 +89,11 @@
   .navbar-links {
     display: none;
     flex-direction: column;
-    position: absolute; /* Links will now position relative to the navbar */
-    top: 100%; /* Place links directly below the navbar */
+    position: absolute;
+    top: 100%;
     right: 0;
-    background-color: #444;
-    width: 100%; /* Make the dropdown full-width */
+    background-color: #01327b;
+    width: 100%;
     padding: 1rem;
     animation: slideIn 0.3s ease-in-out;
   }
@@ -95,4 +114,10 @@
   to {
     transform: translateY(0);
   }
+}
+
+.menu-icon {
+  font-size: 2rem;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
 }
