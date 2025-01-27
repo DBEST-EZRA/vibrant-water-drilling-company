@@ -39,13 +39,13 @@ const Contact = () => {
               <strong>Address:</strong> Karen, Nairobi, Kenya
             </p>
             <p>
-              <strong>Phone:</strong> +254 712 345 678
+              <strong>Phone:</strong> +254 794 930 049
             </p>
             <p>
-              <strong>Email:</strong> info@vibrantdrilling.com
+              <strong>Email:</strong> info@vibrantwaterdrilling.co.ke
             </p>
             <p>
-              <strong>Hours:</strong> Mon - Fri: 8:00 AM - 5:00 PM
+              <strong>Hours:</strong> Mon - Sat: 8:00 AM - 5:00 PM
             </p>
           </div>
 

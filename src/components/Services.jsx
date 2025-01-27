@@ -57,7 +57,12 @@ const Services = () => {
 
       {/* Services Section */}
       <section className="container py-5" data-aos="fade-up">
-        <h2 className="text-center mb-4">Our Services</h2>
+        <h2
+          className="text-center mb-4"
+          style={{ color: "#01327b", fontWeight: "bold" }}
+        >
+          Our Services
+        </h2>
         <p className="text-center mb-5">
           At Vibrant Water Drilling Company, we are dedicated to providing
           high-quality water solutions tailored to meet your needs. Whether it's

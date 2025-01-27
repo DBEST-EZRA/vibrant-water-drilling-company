@@ -1,99 +1,98 @@
 /* Navbar.css */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #333;
-    color: #fff;
-    position: relative; /* Make the navbar the positioning context for its children */
-  }
-  
-  .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #01327b;
+  color: #fff;
+  position: relative; /* Make the navbar the positioning context for its children */
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ff9800;
+  transform: scale(1.1);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #ff9800;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 2rem;
+}
+
+.navbar-links.open {
+  display: flex;
+}
+
+@media (max-width: 768px) {
   .navbar-links {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .navbar-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    position: relative;
-    transition: color 0.3s, transform 0.3s;
-  }
-  
-  .navbar-links a:hover {
-    color: #ff9800;
-    transform: scale(1.1);
-  }
-  
-  .navbar-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background-color: #ff9800;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .navbar-links a:hover::after {
-    width: 100%;
-  }
-  
-  .menu-toggle {
     display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
+    flex-direction: column;
+    position: absolute; /* Links will now position relative to the navbar */
+    top: 100%; /* Place links directly below the navbar */
+    right: 0;
+    background-color: #444;
+    width: 100%; /* Make the dropdown full-width */
+    padding: 1rem;
+    animation: slideIn 0.3s ease-in-out;
   }
-  
-  .menu-icon {
-    font-size: 2rem;
-  }
-  
+
   .navbar-links.open {
     display: flex;
   }
-  
-  @media (max-width: 768px) {
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      position: absolute; /* Links will now position relative to the navbar */
-      top: 100%; /* Place links directly below the navbar */
-      right: 0;
-      background-color: #444;
-      width: 100%; /* Make the dropdown full-width */
-      padding: 1rem;
-      animation: slideIn 0.3s ease-in-out;
-    }
-  
-    .navbar-links.open {
-      display: flex;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
+
+  .menu-toggle {
+    display: block;
   }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
   }
-  
+  to {
+    transform: translateY(0);
+  }
+}

@@ -31,7 +31,12 @@ const About = () => {
 
       {/* About Us Section */}
       <section className="container py-5" data-aos="fade-up">
-        <h2 className="text-center mb-4">About Us</h2>
+        <h2
+          className="text-center mb-4"
+          style={{ color: "#01327b", fontWeight: "bold" }}
+        >
+          About Us
+        </h2>
         <div className="row">
           <div className="col-12">
             <h3 className="fw-bold mb-3">Our Vision</h3>

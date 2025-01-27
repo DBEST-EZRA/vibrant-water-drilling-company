@@ -36,7 +36,15 @@ const HomeServices = () => {
   return (
     <div>
       {/* Services Section */}
-      <section className="container py-5" data-aos="fade-up">
+      <section
+        className="container-fluid py-5"
+        data-aos="fade-up"
+        style={{
+          background: `linear-gradient(270deg, #ebf8ff, #f3ebff, #fffceb)`,
+          backgroundSize: "600% 600%",
+          animation: "gradientAnimation 8s ease infinite",
+        }}
+      >
         <h2
           className="text-center mb-4"
           style={{ color: "#01327b", fontWeight: "bold" }}
@@ -56,7 +64,7 @@ const HomeServices = () => {
               <div
                 className="card shadow-sm border-0 h-100"
                 style={{
-                  backgroundColor: "#ebedef", // Light gray background
+                  backgroundColor: "#ffffff", // White background for cards
                   borderRadius: "8px",
                   overflow: "hidden",
                 }}
@@ -86,6 +94,23 @@ const HomeServices = () => {
           ))}
         </div>
       </section>
+
+      {/* Gradient Animation CSS */}
+      <style>
+        {`
+          @keyframes gradientAnimation {
+            0% {
+              background-position: 0% 50%;
+            }
+            50% {
+              background-position: 100% 50%;
+            }
+            100% {
+              background-position: 0% 50%;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

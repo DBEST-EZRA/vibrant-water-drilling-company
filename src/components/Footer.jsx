@@ -40,9 +40,25 @@ const Footer = () => {
               <span>Do You Have Questions?</span>
               <p>We'll help you to grow your career and growth.</p>
             </div>
-            <button className={`btn5 ${isVisible ? "slide-in" : ""}`}>
+            <a
+              href={`https://wa.me/254794930049?text=${encodeURIComponent(
+                "Hello customer care @Vibrant Water Drilling Company, I have visited your website and I need your assistance."
+              )}`}
+              className={`btn5 ${isVisible ? "slide-in" : ""}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "#fff",
+                backgroundColor: "#01327b",
+                padding: "10px 20px",
+                borderRadius: "8px",
+                fontWeight: "bold",
+                display: "inline-block",
+              }}
+            >
               Contact Us Today
-            </button>
+            </a>
           </div>
         </div>
       </section>
