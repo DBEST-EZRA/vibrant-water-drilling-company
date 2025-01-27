@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import introImage from "../images/hero.jpg";
 
 const HeroSection = () => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const HeroSection = () => {
       className="hero-section text-white d-flex align-items-center justify-content-center"
       style={{
         height: "50vh", // Half screen height
-        backgroundImage: "url('https://picsum.photos/1920/1080?blur=10')",
+        backgroundImage: `url(${introImage})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",

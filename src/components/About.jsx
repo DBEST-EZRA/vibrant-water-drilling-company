@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import introImage from "../images/cover.jpg";
+
 const About = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -15,7 +17,7 @@ const About = () => {
         className="d-flex align-items-center justify-content-center text-center text-white bg-dark"
         style={{
           height: "50vh",
-          backgroundImage: "url('https://picsum.photos/1920/1080?grayscale')",
+          backgroundImage: `url(${introImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

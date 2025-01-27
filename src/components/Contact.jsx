@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import introImage from "../images/cover.jpg";
 
 const Contact = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const Contact = () => {
         className="d-flex align-items-center justify-content-center text-center text-white bg-dark"
         style={{
           height: "60vh",
-          backgroundImage: "url('https://picsum.photos/1920/1080?grayscale')",
+          backgroundImage: `url(${introImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
