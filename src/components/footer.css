@@ -8,12 +8,13 @@
 
 .footerContact span {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 32px;
   color: #01327b;
 }
 
 .footerContact p {
   font-size: 18px;
+  margin: 10px 0;
 }
 
 .footerContact span,
@@ -34,7 +35,7 @@
   color: white;
   font-size: 16px;
   font-weight: bold;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -47,12 +48,14 @@
 .btn6 {
   background-color: #01327b;
   color: white;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
   padding: 12px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: all 0.3s ease, transform 0.6s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn5:hover {
@@ -82,51 +85,86 @@ footer {
   padding: 50px 0;
   color: #fff;
 }
+
 footer .container {
   margin-right: 15px;
   margin-left: 15px;
   display: grid;
-  grid-template-columns: 6fr 2fr 2fr 1fr;
+  grid-template-columns: 3fr 2fr 2fr 1fr;
   grid-gap: 20px;
+  align-items: flex-start;
 }
+
 footer img {
-  width: 150px;
+  width: 180px; /* Adjusted for better alignment */
+  margin-bottom: 15px;
 }
+
 footer h2 {
   font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 15px;
 }
+
 footer p {
   color: grey;
-  margin: 20px 0;
+  margin: 15px 0;
+  font-size: 16px;
 }
+
 footer input {
   background-color: #fff;
-  padding: 17px;
+  padding: 12px;
   width: 100%;
   border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
 }
+
 footer h3 {
   font-weight: 500;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
+
 footer ul {
   display: block;
+  list-style: none;
+  padding-left: 0;
 }
+
 footer ul li {
   display: block;
   color: grey;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
+
 .legal {
   text-align: center;
   padding: 20px;
   background: #1d2636;
   color: rgba(255, 255, 255, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
 }
 
 @media screen and (max-width: 800px) {
   footer .container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  footer h2 {
+    font-size: 18px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  footer input {
+    padding: 10px;
   }
 }
