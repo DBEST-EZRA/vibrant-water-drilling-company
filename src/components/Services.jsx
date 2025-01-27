@@ -36,7 +36,7 @@ const Services = () => {
   ];
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#e2dfdf" }}>
       {/* Introduction Section */}
       <section
         className="d-flex align-items-center justify-content-center text-center text-white bg-dark"
@@ -71,7 +71,7 @@ const Services = () => {
               <div
                 className="card shadow-sm border-0 h-100"
                 style={{
-                  backgroundColor: "#f8f9fa", // Light gray background
+                  backgroundColor: "#fff", // Light gray background
                   borderRadius: "8px",
                   overflow: "hidden",
                 }}
