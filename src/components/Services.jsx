@@ -3,6 +3,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// Import your local images
+import introImage from "../images/cover.jpg";
+import wellDrillingImage from "../images/truck.jpg";
+import boreholeMaintenanceImage from "../images/well.jpg";
+import waterConsultancyImage from "../images/water.jpg";
+
 const Services = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -13,19 +19,19 @@ const Services = () => {
       title: "Water Well Drilling",
       description:
         "We provide professional water well drilling services, ensuring a reliable and sustainable water source for your needs.",
-      image: "https://via.placeholder.com/300x200?text=Well+Drilling",
+      image: wellDrillingImage,
     },
     {
       title: "Borehole Maintenance",
       description:
         "Our borehole maintenance services ensure optimal performance and longevity of your water systems.",
-      image: "https://via.placeholder.com/300x200?text=Borehole+Maintenance",
+      image: boreholeMaintenanceImage,
     },
     {
       title: "Water Consultancy",
       description:
         "Get expert advice on water management and solutions tailored to your unique requirements.",
-      image: "https://via.placeholder.com/300x200?text=Water+Consultancy",
+      image: waterConsultancyImage,
     },
   ];
 
@@ -36,7 +42,7 @@ const Services = () => {
         className="d-flex align-items-center justify-content-center text-center text-white bg-dark"
         style={{
           height: "60vh",
-          backgroundImage: "url('https://picsum.photos/1920/1080?grayscale')",
+          backgroundImage: `url(${introImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -78,6 +84,7 @@ const Services = () => {
                   className="card-img-top"
                   style={{
                     height: "200px",
+                    width: "100%",
                     objectFit: "cover",
                   }}
                 />
