@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FaHome, FaClipboardList } from "react-icons/fa";
+import Orders from "./Orders";
+import TrackProgress from "./TrackProgress";
 
 const Dashboard = () => {
   const [activeComponent, setActiveComponent] = useState("Home");
@@ -7,8 +10,13 @@ const Dashboard = () => {
   const [password, setPassword] = useState("");
 
   const components = {
-    Home: <div>Welcome to the Dashboard Home!</div>,
-    Orders: <div>View and manage new orders here.</div>,
+    Home: <TrackProgress />,
+    Orders: <Orders />,
+  };
+
+  const navIcons = {
+    Home: <FaHome />,
+    Orders: <FaClipboardList />,
   };
 
   const handleAuthentication = () => {
@@ -43,7 +51,7 @@ const Dashboard = () => {
     <div className="d-flex">
       {/* Left Side Navigation */}
       <div
-        className="d-flex flex-column bg-dark text-white p-3"
+        className="d-flex flex-column bg-primary text-white p-3"
         style={{ width: "250px", minHeight: "100vh" }}
       >
         <h3 className="text-center mb-4 d-none d-md-block">Dashboard</h3>
@@ -51,18 +59,18 @@ const Dashboard = () => {
           {Object.keys(components).map((key) => (
             <button
               key={key}
-              className={`btn text-start text-white mb-2 d-flex align-items-center ${
-                activeComponent === key ? "btn-primary" : "btn-dark"
+              className={`btn text-white mb-2 d-flex align-items-center ${
+                activeComponent === key ? "btn-dark" : "btn-primary"
               }`}
               onClick={() => setActiveComponent(key)}
               style={{ paddingLeft: "10px" }}
             >
-              <span className="d-none d-md-inline">{key}</span>
-              <span className="d-inline d-md-none">🔹</span>
+              <span>{navIcons[key]}</span>
+              <span className="d-none d-md-inline ms-2">{key}</span>
             </button>
           ))}
         </nav>
-        <div className="mt-auto text-center">
+        <div className="mt-auto text-center d-none d-md-block">
           <p className="small mb-0">&copy; Beta Softwares</p>
         </div>
       </div>
