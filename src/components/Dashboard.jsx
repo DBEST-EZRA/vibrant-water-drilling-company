@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FaHome, FaClipboardList } from "react-icons/fa";
 // import Orders from "./Orders";
 import TrackProgress from "./TrackProgress";
+import AdminTrack from "./AdminTrack";
 
 const Dashboard = () => {
   const [activeComponent, setActiveComponent] = useState("Home");
@@ -11,7 +12,7 @@ const Dashboard = () => {
 
   const components = {
     Home: <TrackProgress />,
-    Orders: <TrackProgress />,
+    Orders: <AdminTrack />,
   };
 
   const navIcons = {
