@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaHome, FaClipboardList } from "react-icons/fa";
-import Orders from "./Orders";
+// import Orders from "./Orders";
 import TrackProgress from "./TrackProgress";
 
 const Dashboard = () => {
@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   const components = {
     Home: <TrackProgress />,
-    Orders: <Orders />,
+    Orders: <TrackProgress />,
   };
 
   const navIcons = {
@@ -76,7 +76,10 @@ const Dashboard = () => {
       </div>
 
       {/* Right Side Content */}
-      <div className="flex-grow-1">
+      <div
+        className="flex-grow-1"
+        style={{ overflowY: "auto", height: "100vh" }}
+      >
         {/* Header */}
         <div className="bg-light p-3 border-bottom">
           <h2 className="mb-0">Admin</h2>
