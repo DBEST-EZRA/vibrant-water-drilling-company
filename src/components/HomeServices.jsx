@@ -52,11 +52,11 @@ const HomeServices = () => {
           Our Services
         </h2>
         <p className="text-center mb-5">
-          {/* At Vibrant Water Drilling Company, we are dedicated to providing
+          At Vibrant Water Drilling Company, we are dedicated to providing
           high-quality water solutions tailored to meet your needs. Whether it's
           drilling water wells, maintaining boreholes, or offering expert
           consultancy, we are committed to delivering excellence in every
-          project we undertake. */}
+          project we undertake.
         </p>
         <div className="row g-4">
           {services.map((service, index) => (

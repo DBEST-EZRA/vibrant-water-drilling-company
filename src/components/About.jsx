@@ -40,50 +40,70 @@ const About = () => {
           About Us
         </h2>
         <div className="row">
-          <div className="col-12">
-            <h3 className="fw-bold mb-3">Our Vision</h3>
-            <p className="text-muted fs-5">
-              At <strong>Vibrant Water Drilling Company</strong>, our vision is
-              to empower communities and businesses across Kenya with
-              sustainable water solutions. We aim to be a driving force in
-              ensuring every household, farm, and industry has access to clean
-              and reliable water resources.
-            </p>
+          <div className="col-12 position-relative">
+            {[
+              {
+                title: "Our Vision",
+                text: `At <strong>Vibrant Water Drilling Company</strong>, our vision is to empower communities and businesses across Kenya with sustainable water solutions. We aim to be a driving force in ensuring every household, farm, and industry has access to clean and reliable water resources.`,
+                color: "#FF6F61",
+              },
+              {
+                title: "Who We Are",
+                text: `Based in Nairobi, Kenya, <strong>Vibrant Water Drilling Company</strong> is a leader in water drilling, borehole maintenance, and consultancy services. With 10 years of experience, we have earned a reputation for delivering reliable and innovative solutions tailored to meet the diverse needs of our clients.`,
+                color: "#FFD700",
+              },
+              {
+                title: "Our Expertise",
+                text: `We combine advanced drilling technologies, a dedicated team of professionals, and eco-friendly practices to deliver precision and efficiency in every project. From drilling water wells to providing expert consultations, we are committed to excellence at every step.`,
+                color: "#00C6FF",
+              },
+              {
+                title: "Our Commitment",
+                text: `At Vibrant, we are dedicated to building lasting relationships with our clients by consistently exceeding expectations. Our team is passionate about contributing to the long-term water security of Kenya through projects that are both sustainable and impactful.`,
+                color: "#6A5ACD",
+              },
+              {
+                title: "Why Choose Us",
+                text: `Choosing Vibrant Water Drilling Company means partnering with a team that values trust, innovation, and quality. We deliver timely, cost-effective, and customized solutions to ensure your water needs are met with precision and care.`,
+                color: "#32CD32",
+              },
+            ].map((section, index) => (
+              <div className="d-flex align-items-start mb-5" key={index}>
+                {/* Circle and Line */}
+                <div className="d-flex flex-column align-items-center me-3">
+                  <div
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      backgroundColor: section.color,
+                      borderRadius: "50%",
+                    }}
+                  ></div>
+                  {index < 4 && (
+                    <div
+                      style={{
+                        width: "4px",
+                        height: "100px",
+                        background: `linear-gradient(${section.color}, ${
+                          ["#FFD700", "#00C6FF", "#6A5ACD", "#32CD32"][
+                            index + 1
+                          ] || section.color
+                        })`,
+                      }}
+                    ></div>
+                  )}
+                </div>
 
-            <h3 className="fw-bold mb-3">Who We Are</h3>
-            <p className="text-muted fs-5">
-              Based in Nairobi, Kenya,{" "}
-              <strong>Vibrant Water Drilling Company</strong> is a leader in
-              water drilling, borehole maintenance, and consultancy services.
-              With 10 years of experience, we have earned a reputation for
-              delivering reliable and innovative solutions tailored to meet the
-              diverse needs of our clients.
-            </p>
-
-            <h3 className="fw-bold mb-3">Our Expertise</h3>
-            <p className="text-muted fs-5">
-              We combine advanced drilling technologies, a dedicated team of
-              professionals, and eco-friendly practices to deliver precision and
-              efficiency in every project. From drilling water wells to
-              providing expert consultations, we are committed to excellence at
-              every step.
-            </p>
-
-            <h3 className="fw-bold mb-3">Our Commitment</h3>
-            <p className="text-muted fs-5">
-              At Vibrant, we are dedicated to building lasting relationships
-              with our clients by consistently exceeding expectations. Our team
-              is passionate about contributing to the long-term water security
-              of Kenya through projects that are both sustainable and impactful.
-            </p>
-
-            <h3 className="fw-bold mb-3">Why Choose Us</h3>
-            <p className="text-muted fs-5">
-              Choosing Vibrant Water Drilling Company means partnering with a
-              team that values trust, innovation, and quality. We deliver
-              timely, cost-effective, and customized solutions to ensure your
-              water needs are met with precision and care.
-            </p>
+                {/* Content */}
+                <div>
+                  <h3 className="fw-bold mb-3">{section.title}</h3>
+                  <p
+                    className="text-muted fs-5"
+                    dangerouslySetInnerHTML={{ __html: section.text }}
+                  ></p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

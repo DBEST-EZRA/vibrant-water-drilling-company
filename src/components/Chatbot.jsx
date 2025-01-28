@@ -9,7 +9,14 @@ const Chatbot = () => {
 
   const handleSend = () => {
     if (inputText.trim() !== "") {
-      setMessages([...messages, inputText]);
+      // Add user's message to the chat
+      const userMessage = { text: inputText, sender: "user" };
+      const botMessage = {
+        text: "Hello, our chatbot is under maintenance to give you the best service, kindly reach us through +254794930049",
+        sender: "bot",
+      };
+
+      setMessages([...messages, userMessage, botMessage]);
       setInputText(""); // Clear the input field
     }
   };
@@ -61,14 +68,21 @@ const Chatbot = () => {
             className="card-body overflow-auto"
             style={{ flex: "1", display: "flex", flexDirection: "column" }}
           >
-            <p className="text-muted">Welcome! How can we assist you?</p>
+            <p className="text-muted">
+              Welcome to Vibrant Borehole Drilling Company! How can we assist
+              you?
+            </p>
             {messages.map((message, index) => (
               <div
                 key={index}
-                className="bg-light p-2 rounded mb-2 align-self-end text-dark"
+                className={`p-2 rounded mb-2 ${
+                  message.sender === "user"
+                    ? "bg-light text-dark align-self-end"
+                    : "bg-primary text-white align-self-start"
+                }`}
                 style={{ maxWidth: "80%" }}
               >
-                {message}
+                {message.text}
               </div>
             ))}
           </div>

@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import introImage from "../images/hero.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
@@ -13,7 +16,7 @@ const HeroSection = () => {
     <section
       className="hero-section text-white d-flex align-items-center justify-content-center"
       style={{
-        height: "50vh", // Half screen height
+        height: "60vh", // Half screen height
         backgroundImage: `url(${introImage})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
@@ -41,6 +44,7 @@ const HeroSection = () => {
           className="display-4 fw-bold mb-3"
           style={{
             animation: "fadeInDown 2s ease",
+            color: "#00c6ff",
           }}
         >
           Welcome to Vibrant Water Drilling
@@ -59,10 +63,7 @@ const HeroSection = () => {
           style={{
             animation: "zoomIn 2s ease",
           }}
-          onClick={() => {
-            // Perform some action here, e.g., navigate programmatically or show a modal
-            console.log("Button clicked");
-          }}
+          onClick={() => navigate("/about")}
         >
           Learn More
         </button>

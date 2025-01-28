@@ -69,7 +69,9 @@ const Stats = () => {
         {stats.map((stat, index) => (
           <div key={stat.id} className="stat-item">
             <span className="stat-value">{counters[index]}</span>
-            <p className="stat-label">{stat.label}</p>
+            <p className="stat-label" style={{ color: "#00c6ff" }}>
+              {stat.label}
+            </p>
           </div>
         ))}
       </div>
