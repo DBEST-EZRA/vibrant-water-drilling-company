@@ -1,54 +1,49 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../database/Config";
 
 const CardSection = () => {
   const [cards, setCards] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    // Example data (replace with your dynamic data fetching)
-    const exampleCards = [
-      {
-        trackingNumber: "12345",
-        name: "John Doe",
-        siteName: "Blue Lagoon",
-        address: "123 Waterway, Springfield",
-        paymentStatus: "Paid",
-        workDates: "Jan 23-Jan 25",
-        status: "In Progress",
-      },
-      {
-        trackingNumber: "67890",
-        name: "Jane Smith",
-        siteName: "Crystal Well",
-        address: "456 River Rd, Shelbyville",
-        paymentStatus: "Pending",
-        workDates: "Jan 21-Jan 22",
-        status: "Completed",
-      },
-      {
-        trackingNumber: "54321",
-        name: "Alice Johnson",
-        siteName: "Golden Spring",
-        address: "789 Lakeview, Ogdenville",
-        paymentStatus: "Unpaid",
-        workDates: "Jan 26-Jan 29",
-        status: "Queued",
-      },
-    ];
+    const fetchOrders = async () => {
+      try {
+        const ordersCollection = collection(db, "orders");
+        const data = await getDocs(ordersCollection);
+        const orders = data.docs.map((doc) => {
+          const order = doc.data();
+          return {
+            trackingNumber: order.trackingNumber || "",
+            name: order.name || "",
+            siteName: order.siteName || "",
+            address: order.address || "",
+            paymentStatus: order.paymentStatus || "",
+            workDates: `${order.workDatesFrom || ""}-${
+              order.workDatesTo || ""
+            }`,
+            status: order.status || "",
+          };
+        });
 
-    // Sort cards by precedence (earliest dates first)
-    const sortedCards = exampleCards.sort((a, b) => {
-      const getDate = (dates) => {
-        const [startDate] = dates.split("-");
-        return new Date(`${startDate} ${new Date().getFullYear()}`);
-      };
+        // Sort cards by precedence (earliest dates first)
+        const sortedCards = orders.sort((a, b) => {
+          const getDate = (dates) => {
+            const [startDate] = dates.split("-");
+            return new Date(`${startDate} ${new Date().getFullYear()}`);
+          };
+          return getDate(a.workDates) - getDate(b.workDates);
+        });
 
-      return getDate(a.workDates) - getDate(b.workDates);
-    });
+        setCards(sortedCards);
+      } catch (error) {
+        console.error("Error fetching orders:", error);
+      }
+    };
 
-    setCards(sortedCards);
+    fetchOrders();
   }, []);
 
   const getStatusTextColor = (status) => {

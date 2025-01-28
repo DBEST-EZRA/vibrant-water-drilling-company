@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaHome, FaClipboardList } from "react-icons/fa";
-// import Orders from "./Orders";
-import TrackProgress from "./TrackProgress";
 import AdminTrack from "./AdminTrack";
+import HomeAdmin from "./HomeAdmin";
 
 const Dashboard = () => {
   const [activeComponent, setActiveComponent] = useState("Home");
@@ -11,7 +10,7 @@ const Dashboard = () => {
   const [password, setPassword] = useState("");
 
   const components = {
-    Home: <TrackProgress />,
+    Home: <HomeAdmin />,
     Orders: <AdminTrack />,
   };
 
