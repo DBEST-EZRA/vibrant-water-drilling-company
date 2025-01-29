@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import { collection, getDocs } from "firebase/firestore";
 import db from "../database/Config";
+import "./CardSection.css"; // Import CSS for animation
 
 const CardSection = () => {
   const [cards, setCards] = useState([]);
@@ -28,7 +29,6 @@ const CardSection = () => {
           };
         });
 
-        // Sort cards by precedence (earliest dates first)
         const sortedCards = orders.sort((a, b) => {
           const getDate = (dates) => {
             const [startDate] = dates.split("-");
@@ -181,6 +181,12 @@ const CardSection = () => {
                         >
                           Order Status: {card.status}
                         </p>
+                        {card.status === "In Progress" && (
+                          <div
+                            className="status-animation"
+                            style={{ width: "100%", maxWidth: "fit-content" }}
+                          ></div>
+                        )}
                       </div>
                     </div>
                   </div>
