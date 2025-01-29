@@ -49,11 +49,11 @@ const CardSection = () => {
   const getStatusTextColor = (status) => {
     switch (status) {
       case "In Progress":
-        return "text-warning";
-      case "Completed":
         return "text-success";
+      case "Completed":
+        return "text-danger";
       case "Queued":
-        return "text-info";
+        return "text-primary";
       default:
         return "text-secondary";
     }
